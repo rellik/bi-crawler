@@ -10,7 +10,7 @@ Some tests to verify a subset of urls.
 
 Assumptions:
 
-1. Its single threaded since parallelising would need more sophisticated solutions. Also gives adequate time to hit servers repeatedly safeley
+1. Its single threaded since parallelising would need more sophisticated solutions. Also gives adequate time to hit servers repeatedly safely
 
 2. Have not supported IP address for domain.
 
