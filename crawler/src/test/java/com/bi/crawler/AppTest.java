@@ -67,7 +67,7 @@ public class AppTest{
                 + "</body>"
                 + "</html>";
 
-        Collection<String> linkList  = App.extractLinks(new ByteArrayInputStream(html.getBytes()), host);
+        Collection<String> linkList  = App.extractLinks(new ByteArrayInputStream(html.getBytes()), App.getDomainURLPattern(host));
         ArrayList extraMatch = new ArrayList(linkList);
         extraMatch.removeAll(Arrays.asList(validLinks));
         System.out.println("Found extra :"+ extraMatch.toString());
@@ -82,7 +82,7 @@ public class AppTest{
     }
 
     @Test
-    public void shouldExtractLinksInPage() throws Exception {
+    public void shouldExtractLinksInSamplePage() throws Exception {
 
         String html = "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
@@ -316,8 +316,9 @@ public class AppTest{
                 "</body>\n" +
                 "</html>";
 
-        Collection<String> linkList  = App.extractLinks(new ByteArrayInputStream(html.getBytes()), "nodejs.org/en/");
+        Collection<String> linkList  = App.extractLinks(new ByteArrayInputStream(html.getBytes()), App.getDomainURLPattern("nodejs.org/en/"));
         System.out.println(" Extracted links size:"+linkList.size()+" contents => "+linkList);
+        Assert.assertEquals(18, linkList.size());
 
     }
 
