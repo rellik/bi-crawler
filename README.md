@@ -16,4 +16,7 @@ Assumptions:
 
 
 With more time: 
-1. Can parallelise and make it faster. 
+1. Can parallelise and make it faster.
+
+
+Sample output in file bi-crawler.output
